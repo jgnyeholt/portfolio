@@ -1,0 +1,91 @@
+$primary-gray:#2d3436;
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Cabin', sans-serif;
+}
+
+#codeAnimation,
+#codeText,
+#codeCursor{
+  color: white;
+  font-family: "Courier";
+}
+
+#codeText{
+  font-size: 1.25em;
+  white-space: pre-wrap;
+}
+
+h1{
+  color: white;
+  margin: 0;
+  font-size: 5em;
+  transform: translateY(-50%);
+  small{
+    font-size: .6em;
+  }
+}
+
+header{
+  background-color: $primary-gray;
+  background-image: linear-gradient(to right, rgba(214, 48, 49, 1) 10%, transparent 70%);
+}
+
+a{
+  text-decoration: none;
+  color: darken($primary-gray, 10);
+}
+
+.navbar,
+.nav-labels{
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.navbar{
+  left: calc(100% - 60px);
+  background-color: rgba(0,0,0,.05);
+  .nav-item{
+    font-size: 1.3em;
+    padding: 10px;
+  }
+}
+
+.nav-labels{
+  left: calc(100% - 120px);
+  .nav-label{
+    font-size: 1.1em;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,.3);
+    width: 100px;
+    text-align: left;
+    padding: 8px 16px;
+    margin: 3px 0;
+    transition: .25s;
+  }
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(-10px);
+}
+
+.hidden{
+  transform: translateX(200px);
+  opacity: 0;
+}
+
+section{
+  height: 100vh;
+}
