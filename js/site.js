@@ -6,6 +6,7 @@ function init(){
   cursor();
   navAnimation();
   scrollMotion();
+  buttonHover();
 }
 
 //===================================================================
@@ -60,3 +61,21 @@ function scrollMotion() {
     }, 750);
   });
 } //end scrollMotion
+
+
+//===================================================================
+//Button Effects
+//===================================================================
+function buttonHover(){
+  $(".site-link").hover(function() {
+    $(this).css("background-color", "#d64f3e");
+    $(this).css("transition", ".25s");
+    $(this).css("transform", "scale(1.1)");
+  },
+  function(){
+    $(this).css("background-color", "rgb(16,25,34)");
+    $(this).css("transition", ".2s");
+    $(this).css("transform", "scale(1)");
+  }
+);
+}
