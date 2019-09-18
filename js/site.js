@@ -1,10 +1,11 @@
-
 $(document).ready(init());
 
 function init(){
+  $("body").fadeIn("slow");
   type();
   cursor();
   navAnimation();
+  scrollMotion();
 }
 
 //===================================================================
@@ -13,19 +14,16 @@ function init(){
 function type(){
     let length = 0;
     const typingFunctionId = window.setInterval(() => {
-    const codeString = `function greet() { \n   console.log('Hello World'); \n} \ngreet();`;
-  //  console.log("length" + length);
-    let printString = codeString.substring(0, length);
-  //  console.log("substring" + printString);
-    $("#codeText").html(printString).append("<p id='codeCursor'>|</p>");
-    if(length !== codeString.length){
-      length++;
-    }
-    else if(length === codeString.length) {
-      window.clearTimeout(typingFunctionId);
-    }
-  //  console.log("new length" + length);
-  }, 100);
+      const codeString = `Welcome! Thanks for visiting my website. While you are here, be sure to check out my portfolio and contact me if you are interested in having me do any work for you!`;
+      let printString = codeString.substring(0, length);
+      $("#codeText").html(printString).append("<p id='codeCursor'>|</p>");
+      if(length !== codeString.length){
+        length++;
+      }
+      else if(length === codeString.length) {
+        window.clearTimeout(typingFunctionId);
+      }
+  }, 50);
 }
 
 function cursor(){
@@ -38,51 +36,27 @@ function cursor(){
 //Navigation
 //===================================================================
 function navAnimation(){
-  $(".nav-item").mouseenter(function (e) {
-    let id;
-    $(".nav-item").off("mouseleave");
+  let itemIndex;
+  let label;
+  $(".nav-item").hover(
+    //hover on
+    function (e){
+      itemIndex = $(".nav-item").index(this);
+      label = $(".nav-label").get(itemIndex);
+      label.classList.add("visible");
+    }, //end hover on
+    //hover off
+    function (e) {
+      label.classList.remove("visible");
+    } //end hover off
+  ); //end hover listener
+}//end navAnimation
 
-
-    let index = $(".nav-item").index(this);
-    let item = $(".nav-label").get(index);
-    // item.style.opacity = "1";
-    // item.style.transform = "translateX(-10px)";
-    //item.style.transition = ".25s";
-    if(item.classList.contains("hidden")){
-          window.clearTimeout(id);
-      item.classList.remove("hidden");
-      item.classList.add("visible");
-    }
-    else if (item.classList.contains("visible")){
-      id = setTimeout(() => {
-       $(".nav-item").mouseleave(function () {
-      item.classList.remove("visible");
-      item.classList.add("hidden");
-         });
-       }, 250);
-    }
-
-
-    // id = setTimeout(() => {
-    //   $(".nav-item").mouseleave(function () {
-    //     //item.style.opacity = "0";
-    //   //  item.style.transform = "translateX(200px)";
-    //   //  item.style.transition = ".25s";
-    //   item.classList.remove("visible");
-    //   item.classList.add("hidden");
-    //   });
-    // }, 250);
-
-
-  }); //end mouseenter
-
-  // $(".nav-label").mouseleave(function () {
-  //   // let index = $(".nav-item").index(this);
-  //   // let item = $(".nav-label").get(index);
-  //   console.log(this);
-  //   this.style.opacity = "0";
-  //   this.style.transform = "translateX(200px)";
-  //   this.style.transition = ".25s";
-  // });
-
-}
+function scrollMotion() {
+  $("a").click(function(e){
+    let location = this.hash;
+    $("html").animate({
+      scrollTop: $(location).offset().top
+    }, 750);
+  });
+} //end scrollMotion
