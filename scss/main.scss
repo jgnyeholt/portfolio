@@ -1,3 +1,424 @@
-@import "_base.scss";
-@import "_layout.scss";
-@import "_component.scss";
+$primary-gray:#2d3436;
+$primary-red: #d64f3e;
+$primary-darkblue: #324c66;
+
+$sm-break: 600px;
+$md-break: 900px;
+$lg-break: 1200px;
+$xl-break: 1600px;
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Cabin', sans-serif;
+  display: none;
+}
+
+h1{
+  font-weight: lighter;
+  margin: 0;
+  font-size: 3em;
+  text-align: center;
+  letter-spacing: 1.1px;
+  small{
+    font-size: .5em;
+  }
+  @media (min-width: $sm-break){
+    font-size: 4em;
+    text-align: left;
+  }
+  @media (min-width: $md-break){
+    font-size: 5em;
+    text-align: left;
+  }
+}
+
+h2{
+  margin: 0;
+  font-size: 2em;
+  font-weight: lighter;
+  letter-spacing: 1.1px;
+  @media(min-width: $sm-break){
+    font-size: 3.5em;
+  }
+}
+
+section{
+  background-color: white;
+  height: 100vh;
+  padding-top: 10%;
+}
+
+a{
+  text-decoration: none;
+  color: darken($primary-gray, 5);
+}
+
+// ===========================
+// header
+// ===========================
+header{
+  display: flex;
+  position: fixed;
+  justify-content: space-around;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: lighten($primary-gray, 20);
+  color: white;
+  padding: 1em;
+  opacity: .9;
+  transition: .5s;
+  &:hover{
+    opacity: 1;
+  }
+  a{
+    display: flex;
+    justify-content: center;
+    transition: .5s;
+    p{
+        margin: 0;
+        margin-left: 5px;
+        display: none;
+        @media (min-width: $sm-break){
+          display: block;
+        }
+    }
+    &:hover{
+      color: white;
+      cursor: pointer;
+    }
+  }
+  @media (min-width: $sm-break){
+    top: 0;
+    bottom: auto;
+  }
+}
+
+
+// ===========================
+// home
+// ===========================
+#home{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: linear-gradient(to bottom right, adjust-color($primary-darkblue, $alpha: -0.5) 50%, adjust-color($primary-darkblue, $alpha: -0.6)) ,url("img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  @media(min-width: $sm-break ){
+    padding-top: 15%;
+  }
+  @media(min-width: $md-break){
+    padding-top: 12%;
+  }
+  @media(min-width: $lg-break){
+    padding-top: 10%;
+  }
+  div{
+    width: 100%;
+    min-height: 70%;
+    @media(min-width: $sm-break){
+      width: 90%;
+      min-height: 70%;
+    }
+    @media (min-width: $md-break){
+      width: 85%;
+    }
+    @media (min-width: $lg-break){
+      min-height: auto;
+    }
+  }
+  #codeAnimation,
+  #codeText,
+  #codeCursor{
+    font-family: "Courier";
+  }
+
+  #codeText{
+    font-size: 1.15em;
+  }
+  #Title{
+    margin-bottom: 17%;
+    @media(min-width: $md-break){
+      margin-bottom: 12%;
+    }
+    @media(min-width: $lg-break){
+      margin-bottom: 10%;
+    }
+  }
+  #Title,
+  #codeAnimation{
+    width: 100%;
+    padding: 10px;
+    color: white;
+    @media(min-width: $sm-break){
+      padding: 1em;
+    }
+    @media(min-width: $md-break){
+      width: 100%;
+      padding: 1.5em;
+    }
+    @media(min-width: $lg-break){
+      width: 75%;
+    }
+    @media(min-width: $xl-break){
+      width:50%;
+
+    }
+  }
+  #codeAnimation{
+    min-height: 3em;
+    text-align: center;
+    @media(min-width: $sm-break){
+      text-align: left;
+    }
+  }
+  #codeText,
+  #codeCursor,
+  #codeCursor p {
+    display: inline;
+  }
+}
+
+
+
+
+// ===========================
+// navigation
+// ===========================
+nav{
+  position: fixed;
+  height: 100vh;
+  width: 40px;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  @media(min-width: $sm-break){
+    width: 60px;
+  }
+}
+
+.navbar,
+.nav-labels{
+  top: 0;
+  height: 100vh;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: $sm-break){
+    width: 60px;
+  }
+}
+
+.navbar{
+  right:0;
+  position: relative;
+  transition: .2s;
+  .nav-item{
+    font-size: 1.3em;
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+    &:hover{
+      color: $primary-red;
+    }
+  }
+  &:hover{
+    background-color: rgba(0,0,0,.25);
+    & a{
+     color: darken($primary-gray, 10);
+    }
+  }
+}
+
+.nav-labels{
+  position: fixed;
+  right: 60px;
+  .nav-label{
+    font-size: 1.1em;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,.3);
+    width: 100px;
+    text-align: left;
+    padding: 8px 16px;
+    margin: 3px 0;
+    position: relative;
+    z-index: 1;
+    transition: .35s;
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  .visible {
+    opacity: 1;
+    transform: translateX(-10px);
+  }
+}
+
+// ===========================
+// about
+// ===========================
+
+#about{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  height: auto;
+  h2{
+    color: $primary-gray;
+  }
+  .about-content{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px;
+    @media(min-width: $sm-break){
+      padding: 3em;
+    }
+    .img-chart{
+      width: 33%;
+      display: none;
+      @media(min-width: $md-break){
+        display: block;
+      }
+      img{
+        width: 100%;
+      }
+    }
+    .about-text{
+      width: 100%;
+      padding: 10px;
+      @media(min-width: $sm-break){
+        padding: 1em;
+      }
+      @media(min-width: $md-break){
+        width: 66%;
+        padding: 2em;
+        margin-left: 2em;
+      }
+    }
+  }
+}
+
+// ===========================
+// Portfolio
+// ===========================
+#porfolio{
+  height: auto;
+  background: linear-gradient(to bottom, adjust-color($primary-darkblue, $alpha: -0.4) , transparent);
+  padding-bottom: 5em;
+  h2{
+    color: white;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .portfolio-grid{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .card{
+      display: inline-block;
+      border: 15px solid $primary-darkblue;
+      width: 600px;
+      height: 380px;
+      border-radius: 15px;
+      margin: 1em;
+      @media(min-width: $md-break){
+        margin: 2em;
+      }
+      &:hover .cardText{
+        opacity: .95;
+        background-color: $primary-darkblue;
+      }
+    }
+    .dashboard,
+    .gameShow,
+    .employeeDirectory,
+    .photoGallery,
+    .registrationForm{
+      background-size: cover;
+      background-repeat: no-repeat;
+
+    }
+    .dashboard{
+      background-image: url("img/dashboard.png");
+      background-position: right;
+    }
+    .gameShow{
+      background-image: url("img/gameShowApp.png");
+      background-position: center;
+    }
+    .employeeDirectory{
+      background-image: url("img/employeeDirectory.png");
+      background-position: right;
+    }
+    .photoGallery{
+      background-image: url("img/photoGallery.png");
+      background-position: center;
+    }
+    .registrationForm{
+      background-image: url("img/registrationForm.png");
+      background-position: center;
+    }
+  } //end portfolio grid
+} //end portfolio
+
+.cardText{
+  opacity: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: .5s;
+  color: white;
+  font-size: .75em;
+  @media(min-width: $sm-break){
+    font-size: 1em;
+  }
+  h3{
+    font-size: 1.5em;
+    text-decoration: underline;
+    margin-bottom: 0;
+    letter-spacing: 1.1px;
+  }
+  .cardInfo{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80%;
+    h4{
+      margin-bottom: 0;
+      letter-spacing: 1.1px;
+    }
+    .highlight{
+      font-style: italic;
+      font-weight: bolder;
+    }
+    ul{
+      margin-top: 0;
+      margin-bottom:0;
+    }
+    div{
+      margin-top: .5em;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      a{
+          display: inline-block;
+          padding: .5em 1em;
+          background-color: darken($primary-darkblue, 20);
+          color:white;
+      }
+    } //end div
+  } //end div
+}//end card text
