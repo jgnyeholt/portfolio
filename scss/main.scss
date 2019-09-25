@@ -71,9 +71,10 @@ header{
   padding: 1em;
   opacity: .9;
   transition: .5s;
-  &:hover{
-    opacity: 1;
-  }
+  z-index: 1;
+  // &:hover {
+  //   opacity: 1;
+  // }
   a{
     display: flex;
     justify-content: center;
@@ -86,10 +87,10 @@ header{
           display: block;
         }
     }
-    &:hover{
-      color: white;
-      cursor: pointer;
-    }
+    // &:hover{
+    //   color: white;
+    //   cursor: pointer;
+    // }
   }
   @media (min-width: $sm-break){
     top: 0;
@@ -222,22 +223,23 @@ nav{
 .navbar{
   right:0;
   position: relative;
-  transition: .2s;
+  transition: .3s;
   .nav-item{
     font-size: 1.3em;
     padding: 10px;
     position: relative;
     z-index: 2;
-    &:hover{
-      color: $primary-red;
-    }
+    transition: .3s;
+    // &:hover{
+    //   color: $primary-red;
+    // }
   }
-  &:hover{
-    background-color: rgba(0,0,0,.25);
-    & a{
-     color: darken($primary-gray, 10);
-    }
-  }
+  // &:hover{
+  //   background-color: rgba(0,0,0,.25);
+  //   & a{
+  //    color: darken($primary-gray, 10);
+  //   }
+  // }
 }
 
 .nav-labels{
@@ -332,13 +334,14 @@ nav{
       height: 380px;
       border-radius: 15px;
       margin: 1em;
+      box-shadow: 0 5px 20px grey;
       @media(min-width: $md-break){
         margin: 2em;
       }
-      &:hover .cardText{
-        opacity: .95;
-        background-color: $primary-darkblue;
-      }
+      // &:hover .cardText{
+      //   opacity: .95;
+      //   background-color: $primary-darkblue;
+      // }
     }
     .dashboard,
     .gameShow,

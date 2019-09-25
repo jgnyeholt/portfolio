@@ -65,9 +65,7 @@ header {
   padding: 1em;
   opacity: 0.9;
   transition: 0.5s;
-}
-header:hover {
-  opacity: 1;
+  z-index: 1;
 }
 header a {
   display: flex;
@@ -83,10 +81,6 @@ header a p {
   header a p {
     display: block;
   }
-}
-header a:hover {
-  color: white;
-  cursor: pointer;
 }
 @media (min-width: 600px) {
   header {
@@ -243,22 +237,14 @@ nav {
 .navbar {
   right: 0;
   position: relative;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 .navbar .nav-item {
   font-size: 1.3em;
   padding: 10px;
   position: relative;
   z-index: 2;
-}
-.navbar .nav-item:hover {
-  color: #d64f3e;
-}
-.navbar:hover {
-  background-color: rgba(0, 0, 0, 0.25);
-}
-.navbar:hover a {
-  color: #16191a;
+  transition: 0.3s;
 }
 
 .nav-labels {
@@ -356,15 +342,12 @@ nav {
   height: 380px;
   border-radius: 15px;
   margin: 1em;
+  box-shadow: 0 5px 20px grey;
 }
 @media (min-width: 900px) {
   #porfolio .portfolio-grid .card {
     margin: 2em;
   }
-}
-#porfolio .portfolio-grid .card:hover .cardText {
-  opacity: 0.95;
-  background-color: #324c66;
 }
 #porfolio .portfolio-grid .dashboard,
 #porfolio .portfolio-grid .gameShow,
