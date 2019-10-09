@@ -75,13 +75,15 @@
           </div>
         </div>
       </section>
+
       <section id="porfolio">
         <h2>Portfolio</h2>
-        <div class="portfolio-grid">
-          <div class="card dashboard">
-            <div class="cardText">
+        <div class="portfolio-container">
+          <!-- APP DASHBOARD -->
+          <div class="portfolio-item ">
+            <div class="portfolio-info">
               <h3>App Dashboard</h3>
-              <div class="cardInfo">
+              <div>
                 <h4>JavaScript Features</h4>
                 <ul>
                   <li>Alert banner</li>
@@ -97,78 +99,162 @@
                   <li>CSS Grid, Flexbox, mobile media queries</li>
                   <li>Scaled Vector Graphics in place of raster images</li>
                 </ul>
-                <div>
-                  <a class="site-link" target="_blank" href="https://github.com/jgnyeholt/web-app-dashboard">See the code</a>
-                  <a class="site-link" target="_blank" href="https://dashboard.jgnyeholt.com/">View site</a>
+                <div class="links">
+                  <a class="external-link" target="_blank" href="https://github.com/jgnyeholt/web-app-dashboard">See code</a>
+                  <a class="external-link" target="_blank" href="https://dashboard.jgnyeholt.com/">View site</a>
                 </div>
-              </div>
-            </div> <!-- end cardText -->
-          </div> <!-- end card -->
+            </div>
+          </div><!-- end portfolio info -->
+          <div class="portfolio-imgs">
+            <img class="portfolio-primary-img" src="css/imgs/DashboardDesktop.png"/>
+            <div class="portfolio-secondary-imgs">
+              <img src="css/imgs/DashboardPhone.png" />
+              <img src="css/imgs/DashboardTablet.png" />
+            </div>
+          </div><!-- end portfolio images -->
 
-          <div class="card gameShow">
-            <div class="cardText">
-              <h3>Game Show App</h3>
-              <div class="cardInfo">
-                <h4>Features</h4>
-                  <ul>
-                    <li>Game board constructed dynamically with JavaScript.</li>
-                    <li>JavaScript math function picks phrase at random</li>
-                    <li>Counters track game progress</li>
-                    <li>Event listeners accept user input</li>
-                    <li>DOM manipulation and reset direct game</li>
-                  </ul>
-                  <div>
-                    <a class="site-link" target="_blank" href="https://github.com/jgnyeholt/js-game-show-app">See the code</a>
-                    <a class="site-link" target="_blank" href="https://gameshow.jgnyeholt.com/">View site</a>
-                  </div>
-              </div>
-            </div> <!-- end cardText -->
-          </div> <!-- end card -->
-
-          <div class="card employeeDirectory">
-            <div class="cardText">
-              <h3>Employee Directory</h3>
-              <div class="cardInfo">
-                <h4>Javascript Features</h4>
+        </div><!-- end APP DASHBOARD-->
+        <hr>
+        <!-- GAMESHOW -->
+        <div class="portfolio-item">
+          <div class="portfolio-info">
+            <h3>Game Show App</h3>
+            <div>
+              <h4>Features</h4>
                 <ul>
-                  <li>AJAX pulls data from API</li>
-                  <li>JavaScript list filter</li>
-                  <li>Javscript modal popup displays extended details</li>
-                  <li>Javscript interactivity scrolls through details</li>
+                  <li>Game board constructed dynamically with JavaScript.</li>
+                  <li>JavaScript math function picks phrase at random</li>
+                  <li>Counters track game progress</li>
+                  <li>Event listeners accept user input</li>
+                  <li>DOM manipulation and reset direct game</li>
                 </ul>
-                <h4>Design</h4>
-                <ul>
-                  <li>Sass</li>
-                  <li>CSS Grid, Flexbox, mobile responsive media queries</li>
-                </ul>
-                <div>
-                  <a class="site-link" target="_blank" href="https://github.com/jgnyeholt/employee-directory-API">See the code</a>
-                  <a class="site-link" target="_blank" href="https://directory.jgnyeholt.com/">View site</a>
+                <div class="links">
+                  <a class="external-link" target="_blank" href="https://github.com/jgnyeholt/js-game-show-app">See code</a>
+                  <a class="external-link" target="_blank" href="https://gameshow.jgnyeholt.com/">View site</a>
                 </div>
-              </div>
-            </div> <!-- end cardText -->
-          </div> <!-- end card -->
+            </div>
+          </div><!-- end portfolio info -->
+          <div class="portfolio-imgs">
+            <img class="portfolio-primary-img" src="css/imgs/GameshowDesktop.png"/>
+            <!-- <div class="portfolio-secondary-imgs">
+              <img src="css/imgs/DashboardPhone.png" />
+              <img src="css/imgs/DashboardTablet.png" />
+            </div> -->
+          </div><!-- end portfolio images -->
+        </div><!-- end GAMESHOW -->
+        <hr>
 
-          <div class="card photoGallery">
-            <div class="cardText">
-              <h3>Photo Gallery</h3>
-              <div class="cardInfo">
-                <h4>Features</h4>
-                <ul>
-                  <li>jQuery enabled lightbox</li>
-                  <li>JavaScript search</li>
-                  <li>CSS Flexbox</li>
-                  <li>Mobile responsive design</li>
-                </ul>
-                <div>
-                  <a class="site-link" target="_blank" href="https://github.com/jgnyeholt/photo-gallery">See the code</a>
-                  <a class="site-link" target="_blank" href="https://gallery.jgnyeholt.com/">View site</a>
-                </div>
+        <!-- DIRECTORY -->
+        <div class="portfolio-item">
+          <div class="portfolio-info">
+            <h3>Employee Directory</h3>
+            <div>
+              <h4>Javascript Features</h4>
+              <ul>
+                <li>AJAX pulls data from API</li>
+                <li>JavaScript list filter</li>
+                <li>Javscript modal popup displays extended details</li>
+                <li>Javscript interactivity scrolls through details</li>
+              </ul>
+              <h4>Design</h4>
+              <ul>
+                <li>Sass</li>
+                <li>CSS Grid, Flexbox, mobile responsive media queries</li>
+              </ul>
+              <div class="links">
+                <a class="external-link" target="_blank" href="https://github.com/jgnyeholt/employee-directory-API">See the code</a>
+                <a class="external-link" target="_blank" href="https://directory.jgnyeholt.com/">View site</a>
               </div>
-            </div> <!-- end cardText -->
-          </div> <!-- end card -->
+            </div>
+          </div><!-- end portfolio info -->
+          <div class="portfolio-imgs">
+            <img class="portfolio-primary-img" src="css/imgs/DashboardDesktop.png"/>
+            <div class="portfolio-secondary-imgs">
+              <img src="css/imgs/DashboardPhone.png" />
+              <img src="css/imgs/DashboardTablet.png" />
+            </div>
+          </div><!-- end portfolio images -->
+        </div><!-- end DIRECTORY -->
+        <hr>
 
-          <div class="card registrationForm">
+        <!-- PHOTO GALLERY -->
+        <div class="portfolio-item">
+          <div class="portfolio-info">
+            <h3>Photo Gallery</h3>
+            <div>
+              <h4>Features</h4>
+              <ul>
+                <li>jQuery enabled lightbox</li>
+                <li>JavaScript search</li>
+                <li>CSS Flexbox</li>
+                <li>Mobile responsive design</li>
+              </ul>
+              <div class="links">
+                <a class="external-link" target="_blank" href="https://github.com/jgnyeholt/photo-gallery">See the code</a>
+                <a class="external-link" target="_blank" href="https://gallery.jgnyeholt.com/">View site</a>
+              </div>
+            </div>
+          </div><!-- end portfolio info -->
+          <div class="portfolio-imgs">
+            <img class="portfolio-primary-img" src="css/imgs/DashboardDesktop.png"/>
+            <div class="portfolio-secondary-imgs">
+              <img src="css/imgs/DashboardPhone.png" />
+              <img src="css/imgs/DashboardTablet.png" />
+            </div>
+          </div><!-- end portfolio images -->
+        </div><!-- end PHOTO GALLERY -->
+        <hr>
+
+        <!-- REGISTRATION FORM-->
+        <div class="portfolio-item">
+          <div class="portfolio-info">
+            <h3>Registration Form</h3>
+            <div>
+              <h4>Features</h4>
+              <ul>
+                <li>Mobile responsive design</li>
+                <li>CSS Flexbox</li>
+                <li>JavaScript form validation</li>
+              </ul>
+              <div class="links">
+                <a class="external-link" target="_blank" href="https://github.com/jgnyeholt/Online-Registration-Form">See the code</a>
+                <a class="external-link" target="_blank" href="https://registrationform.jgnyeholt.com/">View site</a>
+              </div>
+            </div>
+          </div><!-- end portfolio info -->
+          <div class="portfolio-imgs">
+            <img class="portfolio-primary-img" src="css/imgs/DashboardDesktop.png"/>
+            <div class="portfolio-secondary-imgs">
+              <img src="css/imgs/DashboardPhone.png" />
+              <img src="css/imgs/DashboardTablet.png" />
+            </div>
+          </div><!-- end portfolio images -->
+        </div><!-- end REGISTRATION FORM -->
+        <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div> <!-- end portfolio container -->
+
+        <!-- old -->
+          <!-- <div class="card registrationForm">
             <div class="cardText">
               <h3>Registration Form</h3>
               <div class="cardInfo">
@@ -182,10 +268,10 @@
                   <a class="site-link" target="_blank" href="https://github.com/jgnyeholt/Online-Registration-Form">See the code</a>
                   <a class="site-link" target="_blank" href="https://registrationform.jgnyeholt.com/">View site</a>
                 </div>
-              </div>
-            </div> <!-- end cardText -->
-          </div> <!-- end card -->
-        </div><!-- end portfolio grid -->
+              </div> -->
+          <!--  </div> <!-- end cardText -->
+        <!--  </div> <!-- end card -->
+      <!--  </div><!-- end portfolio grid -->
       </section>
     </main>
     <script src="js/jquery-3.4.1.min.js"></script>

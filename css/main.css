@@ -53,6 +53,22 @@ a {
   color: #212728;
 }
 
+hr {
+  border: 0;
+  height: 3px;
+  width: 100%;
+  background-image: linear-gradient(to right, #F6F6F6, #d64f3e, #F6F6F6);
+  margin: 12vh 0;
+}
+
+hr:nth-of-type(odd) {
+  transform: rotate(5deg);
+}
+
+hr:nth-of-type(even) {
+  transform: rotate(-5deg);
+}
+
 header {
   display: flex;
   position: fixed;
@@ -321,114 +337,72 @@ nav {
 }
 
 #porfolio {
+  background-color: #324c66;
   height: auto;
-  background: linear-gradient(to bottom, rgba(50, 76, 102, 0.6), transparent);
-  padding-bottom: 5em;
+  padding-bottom: 15vh;
 }
 #porfolio h2 {
-  color: white;
   text-align: center;
+  color: white;
   margin-bottom: 1em;
 }
-#porfolio .portfolio-grid {
+#porfolio .portfolio-container {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-#porfolio .portfolio-grid .card {
-  display: inline-block;
-  border: 15px solid #324c66;
-  width: 600px;
-  height: 380px;
-  border-radius: 15px;
-  margin: 1em;
-  box-shadow: 0 5px 20px grey;
-}
-@media (min-width: 900px) {
-  #porfolio .portfolio-grid .card {
-    margin: 2em;
-  }
-}
-#porfolio .portfolio-grid .dashboard,
-#porfolio .portfolio-grid .gameShow,
-#porfolio .portfolio-grid .employeeDirectory,
-#porfolio .portfolio-grid .photoGallery,
-#porfolio .portfolio-grid .registrationForm {
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-#porfolio .portfolio-grid .dashboard {
-  background-image: url("img/dashboard.png");
-  background-position: right;
-}
-#porfolio .portfolio-grid .gameShow {
-  background-image: url("img/gameShowApp.png");
-  background-position: center;
-}
-#porfolio .portfolio-grid .employeeDirectory {
-  background-image: url("img/employeeDirectory.png");
-  background-position: right;
-}
-#porfolio .portfolio-grid .photoGallery {
-  background-image: url("img/photoGallery.png");
-  background-position: center;
-}
-#porfolio .portfolio-grid .registrationForm {
-  background-image: url("img/registrationForm.png");
-  background-position: center;
+  flex-direction: column;
+  background-color: white;
+  padding: 5em;
 }
 
-.cardText {
-  opacity: 0;
-  height: 100%;
+.portfolio-item {
+  min-height: 60vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: 0.5s;
-  color: white;
-  font-size: 0.75em;
-}
-@media (min-width: 600px) {
-  .cardText {
-    font-size: 1em;
-  }
-}
-.cardText h3 {
-  font-size: 1.5em;
-  text-decoration: underline;
-  margin-bottom: 0;
-  letter-spacing: 1.1px;
-}
-.cardText .cardInfo {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 80%;
-}
-.cardText .cardInfo h4 {
-  margin-bottom: 0;
-  letter-spacing: 1.1px;
-}
-.cardText .cardInfo .highlight {
-  font-style: italic;
-  font-weight: bolder;
-}
-.cardText .cardInfo ul {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.cardText .cardInfo div {
-  margin-top: 0.5em;
+  flex-direction: row;
   width: 100%;
-  display: flex;
-  justify-content: space-around;
 }
-.cardText .cardInfo div a {
-  display: inline-block;
+.portfolio-item .portfolio-info {
+  color: #2d3436;
+  font-size: 1.5em;
+  width: 40%;
+  max-width: 40%;
+}
+.portfolio-item .portfolio-info .links {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0;
+}
+.portfolio-item .portfolio-info .links .external-link {
+  background-color: #324c66;
   padding: 0.5em 1em;
-  background-color: #101922;
   color: white;
+  transition: 0.25s;
+}
+.portfolio-item .portfolio-info .links .external-link:hover {
+  background-color: #d64f3e;
+}
+.portfolio-item .portfolio-imgs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  max-width: 60%;
+  padding-left: 2em;
+}
+.portfolio-item .portfolio-imgs .portfolio-primary-img {
+  width: 50%;
+  background-color: #F6F6F6;
+  margin: 0.5em;
+  padding: 1em;
+}
+.portfolio-item .portfolio-imgs .portfolio-secondary-imgs {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-item .portfolio-imgs .portfolio-secondary-imgs img {
+  width: 100%;
+  margin: 0.5em;
+  background-color: #F6F6F6;
 }
 
 /*# sourceMappingURL=main.css.map */

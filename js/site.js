@@ -65,7 +65,7 @@ function scrollMotion() {
 
 
 //===================================================================
-//Button Effects
+//Navigation/Button Effects
 //===================================================================
 function buttonHover(){
   $(".site-link").hover(function() {
@@ -111,13 +111,14 @@ function pageHover(){
   }, function(){
     $(this).css("color", "#16191a");
   });
+  //
+  // $(".card").hover(function(){
+  //   $(this).find(".cardText").css("opacity", ".95");
+  //   $(this).find(".cardText").css("background-color", "#324c66");
+  // }, function(){
+  //   $(this).find(".cardText").css("opacity", "0");
+  //   $(this).find(".cardText").css("background-color", "transparent");
+  // });
 
-  $(".card").hover(function(){
-    $(this).find(".cardText").css("opacity", ".95");
-    $(this).find(".cardText").css("background-color", "#324c66");
-  }, function(){
-    $(this).find(".cardText").css("opacity", "0");
-    $(this).find(".cardText").css("background-color", "transparent");
-  });
 
 }
