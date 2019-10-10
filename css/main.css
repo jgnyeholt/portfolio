@@ -58,7 +58,6 @@ hr {
   height: 3px;
   width: 100%;
   background-image: linear-gradient(to right, #F6F6F6, #d64f3e, #F6F6F6);
-  margin: 12vh 0;
 }
 
 hr:nth-of-type(odd) {
@@ -112,7 +111,7 @@ header a p {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-image: linear-gradient(to bottom right, rgba(50, 76, 102, 0.5) 50%, rgba(50, 76, 102, 0.4)), url("img/background.jpg");
+  background-image: linear-gradient(to bottom right, rgba(50, 76, 102, 0.5) 50%, rgba(50, 76, 102, 0.4)), url("imgs/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right;
@@ -346,6 +345,17 @@ nav {
   color: white;
   margin-bottom: 1em;
 }
+#porfolio .portfolio-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 10vh;
+  margin-top: 10vh;
+}
+#porfolio .portfolio-header a {
+  color: white;
+}
 #porfolio .portfolio-container {
   display: flex;
   flex-direction: column;
@@ -354,6 +364,7 @@ nav {
 }
 
 .portfolio-item {
+  padding: 100px 0;
   min-height: 60vh;
   display: flex;
   flex-direction: row;
@@ -364,6 +375,13 @@ nav {
   font-size: 1.5em;
   width: 40%;
   max-width: 40%;
+}
+.portfolio-item .portfolio-info li {
+  list-style: none;
+  margin: 0.5em 0;
+}
+.portfolio-item .portfolio-info ul {
+  border-left: 1px solid #d64f3e;
 }
 .portfolio-item .portfolio-info .links {
   width: 60%;
@@ -376,6 +394,7 @@ nav {
   padding: 0.5em 1em;
   color: white;
   transition: 0.25s;
+  display: inline-block;
 }
 .portfolio-item .portfolio-info .links .external-link:hover {
   background-color: #d64f3e;
