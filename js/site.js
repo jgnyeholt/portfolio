@@ -6,8 +6,6 @@ function init(){
   cursor();
   navAnimation();
   scrollMotion();
-  buttonHover();
-  pageHover();
 }
 
 //===================================================================
@@ -62,63 +60,3 @@ function scrollMotion() {
     }, 750);
   });
 } //end scrollMotion
-
-
-//===================================================================
-//Navigation/Button Effects
-//===================================================================
-function buttonHover(){
-  $(".site-link").hover(function() {
-    $(this).css("background-color", "#d64f3e");
-    $(this).css("transition", ".25s");
-    $(this).css("transform", "scale(1.1)");
-  },
-  function(){
-    $(this).css("background-color", "rgb(16,25,34)");
-    $(this).css("transition", ".2s");
-    $(this).css("transform", "scale(1)");
-  });
-}
-
-//===================================================================
-//Hover Effects
-//===================================================================
-function pageHover(){
-  $("header").hover(function(){
-    $("header").css("opacity", "1");
-  }, function(){
-    $("header").css("opacity", ".9");
-  });
-
-  $("header a").hover(function(e){
-    $(this).css("color", "white");
-    $(this).css("cursor", "pointer");
-  }, function(){
-    $(this).css("color", "rgb(33,39,40)");
-    $("header a").css("cursor", "default");
-  });
-
-  $(".navbar").hover(function(){
-    $(".navbar").css("background-color","rgba(0,0,0,.25)");
-    $(".navbar a").css("color", "rgb(22,25,26)");
-  }, function(){
-    $(".navbar").css("background-color", "transparent");
-    $(".navbar a").css("color", "rgb(33,39,40)");
-  });
-
-  $(".nav-item").hover(function(e){
-    $(this).css("color", "#d64f3e");
-  }, function(){
-    $(this).css("color", "#16191a");
-  });
-  //
-  // $(".card").hover(function(){
-  //   $(this).find(".cardText").css("opacity", ".95");
-  //   $(this).find(".cardText").css("background-color", "#324c66");
-  // }, function(){
-  //   $(this).find(".cardText").css("opacity", "0");
-  //   $(this).find(".cardText").css("background-color", "transparent");
-  // });
-
-
-}

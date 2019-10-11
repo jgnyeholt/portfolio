@@ -55,9 +55,10 @@ a {
 
 hr {
   border: 0;
-  height: 3px;
+  height: 2px;
   width: 100%;
   background-image: linear-gradient(to right, #F6F6F6, #d64f3e, #F6F6F6);
+  margin: 8vh 0;
 }
 
 hr:nth-of-type(odd) {
@@ -80,7 +81,10 @@ header {
   padding: 1em;
   opacity: 0.9;
   transition: 0.5s;
-  z-index: 1;
+  z-index: 2;
+}
+header:hover {
+  opacity: 1;
 }
 header a {
   display: flex;
@@ -96,6 +100,10 @@ header a p {
   header a p {
     display: block;
   }
+}
+header a:hover {
+  color: white;
+  cursor: pointer;
 }
 @media (min-width: 600px) {
   header {
@@ -261,6 +269,15 @@ nav {
   z-index: 2;
   transition: 0.3s;
 }
+.navbar .nav-item:hover {
+  color: #d64f3e;
+}
+.navbar:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.navbar:hover a {
+  color: #16191a;
+}
 
 .nav-labels {
   position: fixed;
@@ -289,7 +306,6 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
   height: auto;
 }
 #about h2 {
@@ -334,6 +350,11 @@ nav {
     margin-left: 2em;
   }
 }
+@media (min-width: 1200px) {
+  #about {
+    min-height: 100vh;
+  }
+}
 
 #porfolio {
   background-color: #324c66;
@@ -347,34 +368,58 @@ nav {
 }
 #porfolio .portfolio-header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   width: 100%;
-  height: 10vh;
+  min-height: 10vh;
   margin-top: 10vh;
+  margin-bottom: 1em;
 }
 #porfolio .portfolio-header a {
   color: white;
+  margin: 0.5em;
+  width: 10em;
+  height: 3em;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.4);
+  line-height: 3em;
+  text-align: center;
+}
+#porfolio .portfolio-header a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+@media (min-width: 900px) {
+  #porfolio .portfolio-header {
+    flex-direction: row;
+  }
 }
 #porfolio .portfolio-container {
   display: flex;
   flex-direction: column;
   background-color: white;
-  padding: 5em;
+  padding: 10px;
+}
+@media (min-width: 600px) {
+  #porfolio .portfolio-container {
+    padding: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  #porfolio .portfolio-container {
+    padding: 5em;
+  }
 }
 
 .portfolio-item {
-  padding: 100px 0;
-  min-height: 60vh;
+  padding: 10px 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
 }
 .portfolio-item .portfolio-info {
   color: #2d3436;
-  font-size: 1.5em;
-  width: 40%;
-  max-width: 40%;
+  width: 100%;
 }
 .portfolio-item .portfolio-info li {
   list-style: none;
@@ -384,7 +429,7 @@ nav {
   border-left: 1px solid #d64f3e;
 }
 .portfolio-item .portfolio-info .links {
-  width: 60%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 1em 0;
@@ -399,13 +444,32 @@ nav {
 .portfolio-item .portfolio-info .links .external-link:hover {
   background-color: #d64f3e;
 }
+@media (min-width: 1600px) {
+  .portfolio-item .portfolio-info .links {
+    width: 60%;
+  }
+}
+@media (min-width: 600px) {
+  .portfolio-item .portfolio-info {
+    width: 40%;
+    max-width: 40%;
+  }
+}
+@media (min-width: 900px) {
+  .portfolio-item .portfolio-info {
+    font-size: 1.25em;
+  }
+}
+@media (min-width: 1200px) {
+  .portfolio-item .portfolio-info {
+    font-size: 1.5em;
+  }
+}
 .portfolio-item .portfolio-imgs {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
-  max-width: 60%;
-  padding-left: 2em;
+  width: 100%;
 }
 .portfolio-item .portfolio-imgs .portfolio-primary-img {
   width: 50%;
@@ -414,14 +478,47 @@ nav {
   padding: 1em;
 }
 .portfolio-item .portfolio-imgs .portfolio-secondary-imgs {
-  width: 25%;
+  width: 70%;
   display: flex;
   flex-direction: column;
 }
 .portfolio-item .portfolio-imgs .portfolio-secondary-imgs img {
-  width: 100%;
+  max-width: 100%;
   margin: 0.5em;
   background-color: #F6F6F6;
+}
+@media (min-width: 900px) {
+  .portfolio-item .portfolio-imgs .portfolio-secondary-imgs {
+    width: 25%;
+  }
+}
+.portfolio-item .portfolio-imgs .desktop {
+  display: none;
+}
+@media (min-width: 900px) {
+  .portfolio-item .portfolio-imgs .desktop {
+    display: block;
+  }
+}
+.portfolio-item .portfolio-imgs .tablet {
+  display: none;
+}
+@media (min-width: 600px) {
+  .portfolio-item .portfolio-imgs .tablet {
+    display: block;
+  }
+}
+@media (min-width: 600px) {
+  .portfolio-item .portfolio-imgs {
+    width: 60%;
+    padding-left: 2em;
+  }
+}
+@media (min-width: 600px) {
+  .portfolio-item {
+    padding: 100px 0;
+    flex-direction: row;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
