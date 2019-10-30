@@ -267,7 +267,7 @@ nav{
     font-size: 1.1em;
     background-color: white;
     box-shadow: 0 8px 16px rgba(0,0,0,.3);
-    width: 100px;
+    width: 150px;
     text-align: left;
     padding: 8px 16px;
     margin: 3px 0;
@@ -279,7 +279,7 @@ nav{
   }
   .visible {
     opacity: 1;
-    transform: translateX(-10px);
+    transform: translateX(-35px);
   }
 }
 
@@ -316,6 +316,13 @@ nav{
     .about-text{
       width: 100%;
       padding: 10px;
+      li{
+        list-style: none;
+        margin: .5em 0;
+      }
+      ul{
+        border-left: 1px solid $primary-red;
+      }
       @media(min-width: $sm-break){
         padding: 1em;
       }
