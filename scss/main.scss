@@ -336,30 +336,50 @@ nav{
 #porfolio{
   background-color: $primary-darkblue;
   height: auto;
+  padding-top: 5%;
   padding-bottom: 15vh;
   h2{
     text-align: center;
     color: white;
+    padding-left: 1em;
     margin-bottom: 1em;
+    @media(min-width: $md-break){
+      margin-bottom: 0;
+    }
   }
   .portfolio-header{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    //width: 80%;
     width: 100%;
     min-height: 10vh;
-    margin-top: 10vh;
-    margin-bottom: 1em;
+    flex-wrap: wrap;
+    //margin-top: 10vh;
+    margin-bottom: 5%;
+    div{
+      height: 15%;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      @media(min-width: $md-break){
+        width: 60%;
+      }
+    }
+
     a{
       color: white;
       margin: .5em;
-      width: 10em;
-      height: 3em;
+      width: 30%;
+      min-width: 15em;
+      height: 8em;
       display: inline-block;
       background-color: rgba(255,255,255,.4);
-      line-height: 3em;
+      line-height: 8em;
       text-align: center;
+      transition: .25s;
       &:hover{
         background-color: rgba(255,255,255,.1);
       }
@@ -390,6 +410,12 @@ nav{
   .portfolio-info{
     color: $primary-gray;
     width: 100%;
+    h3{
+      font-size: 2em;
+    }
+    h4{
+      font-size: 1.5em;
+    }
     li{
       list-style: none;
       margin: .5em 0;
@@ -399,19 +425,26 @@ nav{
     }
     .links{
       width: 100%;
+      max-width: 250px;
+      margin: auto;
       display: flex;
       justify-content: space-between;
       padding: 1em 0;
       .external-link{
         background-color: $primary-darkblue;
-        padding: .5em 1em;
+        padding: 1em 1.5em;
         color: white;
+        min-width: 112px; 
         transition: .25s;
         display: inline-block;
+        margin: 1px;
         &:hover{
           background-color: $primary-red;
         }
       } //end external link
+      @media(min-width: $md-break){
+        margin: 0;
+      }
       @media(min-width: $xl-break){
         width: 60%;
       }
@@ -421,10 +454,7 @@ nav{
       max-width: 40%;
     }
     @media(min-width: $md-break){
-      font-size: 1.25em;
-    }
-    @media(min-width: $lg-break){
-      font-size: 1.5em;
+    //  font-size: 1.25em;
     }
   } //end portfolio info
   .portfolio-imgs{
@@ -472,5 +502,8 @@ nav{
   @media (min-width: $sm-break){
     padding: 100px 0;
     flex-direction: row;
+    &:first-of-type{
+      padding-top: 0;
+    }
   }
 }//end portfolio item

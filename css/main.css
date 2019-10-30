@@ -359,12 +359,19 @@ nav {
 #porfolio {
   background-color: #324c66;
   height: auto;
+  padding-top: 5%;
   padding-bottom: 15vh;
 }
 #porfolio h2 {
   text-align: center;
   color: white;
+  padding-left: 1em;
   margin-bottom: 1em;
+}
+@media (min-width: 900px) {
+  #porfolio h2 {
+    margin-bottom: 0;
+  }
 }
 #porfolio .portfolio-header {
   display: flex;
@@ -373,18 +380,32 @@ nav {
   align-items: center;
   width: 100%;
   min-height: 10vh;
-  margin-top: 10vh;
-  margin-bottom: 1em;
+  flex-wrap: wrap;
+  margin-bottom: 5%;
+}
+#porfolio .portfolio-header div {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (min-width: 900px) {
+  #porfolio .portfolio-header div {
+    width: 60%;
+  }
 }
 #porfolio .portfolio-header a {
   color: white;
   margin: 0.5em;
-  width: 10em;
-  height: 3em;
+  width: 30%;
+  min-width: 15em;
+  height: 8em;
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.4);
-  line-height: 3em;
+  line-height: 8em;
   text-align: center;
+  transition: 0.25s;
 }
 #porfolio .portfolio-header a:hover {
   background-color: rgba(255, 255, 255, 0.1);
@@ -421,6 +442,12 @@ nav {
   color: #2d3436;
   width: 100%;
 }
+.portfolio-item .portfolio-info h3 {
+  font-size: 2em;
+}
+.portfolio-item .portfolio-info h4 {
+  font-size: 1.5em;
+}
 .portfolio-item .portfolio-info li {
   list-style: none;
   margin: 0.5em 0;
@@ -430,19 +457,28 @@ nav {
 }
 .portfolio-item .portfolio-info .links {
   width: 100%;
+  max-width: 250px;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   padding: 1em 0;
 }
 .portfolio-item .portfolio-info .links .external-link {
   background-color: #324c66;
-  padding: 0.5em 1em;
+  padding: 1em 1.5em;
   color: white;
+  min-width: 112px;
   transition: 0.25s;
   display: inline-block;
+  margin: 1px;
 }
 .portfolio-item .portfolio-info .links .external-link:hover {
   background-color: #d64f3e;
+}
+@media (min-width: 900px) {
+  .portfolio-item .portfolio-info .links {
+    margin: 0;
+  }
 }
 @media (min-width: 1600px) {
   .portfolio-item .portfolio-info .links {
@@ -453,16 +489,6 @@ nav {
   .portfolio-item .portfolio-info {
     width: 40%;
     max-width: 40%;
-  }
-}
-@media (min-width: 900px) {
-  .portfolio-item .portfolio-info {
-    font-size: 1.25em;
-  }
-}
-@media (min-width: 1200px) {
-  .portfolio-item .portfolio-info {
-    font-size: 1.5em;
   }
 }
 .portfolio-item .portfolio-imgs {
@@ -518,6 +544,9 @@ nav {
   .portfolio-item {
     padding: 100px 0;
     flex-direction: row;
+  }
+  .portfolio-item:first-of-type {
+    padding-top: 0;
   }
 }
 
