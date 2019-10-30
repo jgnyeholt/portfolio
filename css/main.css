@@ -408,7 +408,7 @@ nav {
   transition: 0.25s;
 }
 #porfolio .portfolio-header a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #475e76;
 }
 @media (min-width: 900px) {
   #porfolio .portfolio-header {

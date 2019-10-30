@@ -3,6 +3,8 @@ $primary-red: #d64f3e;
 $primary-darkblue: #324c66;
 $primary-lightgray: #F6F6F6;
 
+$secondary-gray: #475e76;
+
 $sm-break: 600px;
 $md-break: 900px;
 $lg-break: 1200px;
@@ -334,7 +336,9 @@ nav{
 // ===========================
 
 #porfolio{
+//  background: url("imgs/back.png"), $primary-darkblue;
   background-color: $primary-darkblue;
+
   height: auto;
   padding-top: 5%;
   padding-bottom: 15vh;
@@ -381,7 +385,8 @@ nav{
       text-align: center;
       transition: .25s;
       &:hover{
-        background-color: rgba(255,255,255,.1);
+        //background-color: rgba(255,255,255,.1);
+        background-color: $secondary-gray;
       }
     } //end <a>
     @media(min-width: $md-break){
@@ -434,7 +439,7 @@ nav{
         background-color: $primary-darkblue;
         padding: 1em 1.5em;
         color: white;
-        min-width: 112px; 
+        min-width: 112px;
         transition: .25s;
         display: inline-block;
         margin: 1px;
