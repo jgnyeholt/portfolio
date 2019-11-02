@@ -5,6 +5,7 @@
 body {
   font-family: "Cabin", sans-serif;
   display: none;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -67,6 +68,43 @@ hr:nth-of-type(odd) {
 
 hr:nth-of-type(even) {
   transform: rotate(-5deg);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: 0.5s ease-in;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.from-left {
+  transform: translateX(-3%);
+}
+
+.from-right {
+  transform: translateX(3%);
+}
+
+.from-left,
+.from-right {
+  opacity: 0;
+  transition: 1s;
+}
+
+.from-left.appear,
+.from-right.appear,
+.title-from-right.appear {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.title-from-right {
+  transform: translateX(5%);
+  opacity: 0;
+  transition: 1.25s;
 }
 
 header {
@@ -159,13 +197,9 @@ header a:hover {
     min-height: auto;
   }
 }
-#home #codeAnimation,
-#home #codeText,
-#home #codeCursor {
-  font-family: "Courier";
-}
 #home #codeText {
-  font-size: 1.15em;
+  font-size: 3em;
+  line-height: 2;
 }
 #home #Title {
   margin-bottom: 17%;
@@ -412,10 +446,10 @@ nav {
   background-color: rgba(255, 255, 255, 0.4);
   line-height: 8em;
   text-align: center;
-  transition: 0.25s;
 }
 #porfolio .portfolio-header a:hover {
   background-color: #475e76;
+  transition: 0.25s;
 }
 @media (min-width: 900px) {
   #porfolio .portfolio-header {

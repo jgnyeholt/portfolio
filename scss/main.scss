@@ -17,6 +17,7 @@ $xl-break: 1600px;
 body{
   font-family: 'Cabin', sans-serif;
   display: none;
+  overflow-x: hidden;
 }
 
 h1{
@@ -73,6 +74,45 @@ hr:nth-of-type(odd){
 hr:nth-of-type(even){
   transform: rotate(-5deg);
 }
+//faders
+.fade-in{
+  opacity: 0;
+  transition: .5s ease-in;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateX(0);
+}
+//sliders
+.from-left{
+  transform: translateX(-3%);
+}
+
+.from-right{
+  transform: translateX(3%);
+}
+
+.from-left,
+.from-right{
+  opacity: 0;
+//  transition:opacity .5s, transform .75s;
+  transition: 1s;
+}
+
+.from-left.appear,
+.from-right.appear,
+.title-from-right.appear{
+  transform: translateX(0);
+  opacity: 1;
+}
+//title
+.title-from-right{
+  transform: translateX(5%);
+  opacity: 0;
+  transition: 1.25s;
+}
+
 
 // ===========================
 // header
@@ -157,11 +197,12 @@ header{
   #codeAnimation,
   #codeText,
   #codeCursor{
-    font-family: "Courier";
+    //font-family: "Courier";
   }
 
   #codeText{
-    font-size: 1.15em;
+    font-size: 3em;
+    line-height: 2;
   }
   #Title{
     margin-bottom: 17%;
@@ -390,10 +431,11 @@ nav{
       background-color: rgba(255,255,255,.4);
       line-height: 8em;
       text-align: center;
-      transition: .25s;
+
       &:hover{
         //background-color: rgba(255,255,255,.1);
         background-color: $secondary-gray;
+        transition: .25s;
       }
     } //end <a>
     @media(min-width: $md-break){
