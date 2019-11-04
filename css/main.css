@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: "Cabin", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   display: none;
   overflow-x: hidden;
 }
@@ -47,6 +47,7 @@ section {
   background-color: white;
   height: 100vh;
   padding-top: 10%;
+  overflow-x: hidden;
 }
 
 a {
@@ -131,12 +132,12 @@ header a {
 }
 header a p {
   margin: 0;
-  margin-left: 5px;
   display: none;
 }
 @media (min-width: 600px) {
   header a p {
     display: block;
+    margin-left: 5px;
   }
 }
 header a:hover {
@@ -155,21 +156,30 @@ header a:hover {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   background-image: linear-gradient(to bottom right, rgba(50, 76, 102, 0.5) 50%, rgba(50, 76, 102, 0.4)), url("imgs/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right;
+  padding: 10px;
+  color: white;
+  font-size: 1.25em;
+}
+#home h1 {
+  margin-top: -10%;
+  text-align: center;
 }
 @media (min-width: 600px) {
   #home {
     padding-top: 15%;
+    padding: 1em;
   }
 }
 @media (min-width: 900px) {
   #home {
     padding-top: 12%;
+    padding: 1.5em;
   }
 }
 @media (min-width: 1200px) {
@@ -177,87 +187,15 @@ header a:hover {
     padding-top: 10%;
   }
 }
-#home div {
-  width: 100%;
-  min-height: 70%;
-}
-@media (min-width: 600px) {
-  #home div {
-    width: 90%;
-    min-height: 70%;
-  }
-}
-@media (min-width: 900px) {
-  #home div {
-    width: 85%;
-  }
-}
-@media (min-width: 1200px) {
-  #home div {
-    min-height: auto;
-  }
-}
-#home #codeText {
-  font-size: 3em;
-  line-height: 2;
-}
-#home #Title {
-  margin-bottom: 17%;
-}
-@media (min-width: 900px) {
-  #home #Title {
-    margin-bottom: 12%;
-  }
-}
-@media (min-width: 1200px) {
-  #home #Title {
-    margin-bottom: 10%;
-  }
-}
-#home #Title,
-#home #codeAnimation {
-  width: 100%;
-  padding: 10px;
-  color: white;
-}
-@media (min-width: 600px) {
-  #home #Title,
-#home #codeAnimation {
-    padding: 1em;
-  }
-}
-@media (min-width: 900px) {
-  #home #Title,
-#home #codeAnimation {
-    width: 100%;
-    padding: 1.5em;
-  }
-}
-@media (min-width: 1200px) {
-  #home #Title,
-#home #codeAnimation {
-    width: 75%;
-  }
-}
-@media (min-width: 1600px) {
-  #home #Title,
-#home #codeAnimation {
-    width: 50%;
-  }
-}
-#home #codeAnimation {
-  min-height: 3em;
-  text-align: center;
-}
-@media (min-width: 600px) {
-  #home #codeAnimation {
-    text-align: left;
-  }
-}
 #home #codeText,
 #home #codeCursor,
 #home #codeCursor p {
   display: inline;
+  font-weight: lighter;
+}
+#home #codeText {
+  font-size: 1.5em;
+  line-height: 48px;
 }
 
 nav {
@@ -318,7 +256,6 @@ nav {
   right: 60px;
 }
 .nav-labels .nav-label {
-  font-size: 1.1em;
   background-color: white;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   width: 150px;
@@ -406,12 +343,16 @@ nav {
 #porfolio h2 {
   text-align: center;
   color: white;
-  padding-left: 1em;
   margin-bottom: 1em;
 }
 @media (min-width: 900px) {
   #porfolio h2 {
     margin-bottom: 0;
+  }
+}
+@media (min-width: 1200px) {
+  #porfolio h2 {
+    padding-left: 1em;
   }
 }
 #porfolio .portfolio-header {
@@ -512,9 +453,11 @@ nav {
   transition: 0.25s;
   display: inline-block;
   margin: 1px;
+  transition: 0.5s;
 }
 .portfolio-item .portfolio-info .links .external-link:hover {
   background-color: #d64f3e;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 @media (min-width: 900px) {
   .portfolio-item .portfolio-info .links {
@@ -578,13 +521,13 @@ nav {
 @media (min-width: 600px) {
   .portfolio-item .portfolio-imgs {
     width: 60%;
-    padding-left: 2em;
   }
 }
 @media (min-width: 600px) {
   .portfolio-item {
     padding: 100px 0;
     flex-direction: row;
+    justify-content: space-around;
   }
   .portfolio-item:first-of-type {
     padding-top: 0;

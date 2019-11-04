@@ -15,7 +15,8 @@ $xl-break: 1600px;
 }
 
 body{
-  font-family: 'Cabin', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
+  //font-family: 'Cabin', sans-serif;
   display: none;
   overflow-x: hidden;
 }
@@ -53,6 +54,7 @@ section{
   background-color: white;
   height: 100vh;
   padding-top: 10%;
+  overflow-x: hidden;
 }
 
 a{
@@ -139,10 +141,10 @@ header{
     transition: .5s;
     p{
         margin: 0;
-        margin-left: 5px;
         display: none;
         @media (min-width: $sm-break){
           display: block;
+          margin-left: 5px;
         }
     }
     &:hover{
@@ -165,85 +167,40 @@ header{
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   background-image: linear-gradient(to bottom right, adjust-color($primary-darkblue, $alpha: -0.5) 50%, adjust-color($primary-darkblue, $alpha: -0.6)) ,url("imgs/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right;
+  padding: 10px;
+  color: white;
+  font-size: 1.25em;
+  h1{
+    margin-top: -10%;
+    text-align: center;
+  }
   @media(min-width: $sm-break ){
     padding-top: 15%;
+    padding: 1em;
+
   }
   @media(min-width: $md-break){
     padding-top: 12%;
+    padding: 1.5em;
   }
   @media(min-width: $lg-break){
     padding-top: 10%;
-  }
-  div{
-    width: 100%;
-    min-height: 70%;
-    @media(min-width: $sm-break){
-      width: 90%;
-      min-height: 70%;
-    }
-    @media (min-width: $md-break){
-      width: 85%;
-    }
-    @media (min-width: $lg-break){
-      min-height: auto;
-    }
-  }
-  #codeAnimation,
-  #codeText,
-  #codeCursor{
-    //font-family: "Courier";
-  }
-
-  #codeText{
-    font-size: 3em;
-    line-height: 2;
-  }
-  #Title{
-    margin-bottom: 17%;
-    @media(min-width: $md-break){
-      margin-bottom: 12%;
-    }
-    @media(min-width: $lg-break){
-      margin-bottom: 10%;
-    }
-  }
-  #Title,
-  #codeAnimation{
-    width: 100%;
-    padding: 10px;
-    color: white;
-    @media(min-width: $sm-break){
-      padding: 1em;
-    }
-    @media(min-width: $md-break){
-      width: 100%;
-      padding: 1.5em;
-    }
-    @media(min-width: $lg-break){
-      width: 75%;
-    }
-    @media(min-width: $xl-break){
-      width:50%;
-
-    }
-  }
-  #codeAnimation{
-    min-height: 3em;
-    text-align: center;
-    @media(min-width: $sm-break){
-      text-align: left;
-    }
   }
   #codeText,
   #codeCursor,
   #codeCursor p {
     display: inline;
+    font-weight: lighter;
+  }
+  #codeText{
+    font-size: 1.5em;
+    line-height: 48px;
   }
 }
 
@@ -305,7 +262,7 @@ nav{
   position: fixed;
   right: 60px;
   .nav-label{
-    font-size: 1.1em;
+  //  font-size: 1.1em;
     background-color: white;
     box-shadow: 0 8px 16px rgba(0,0,0,.3);
     width: 150px;
@@ -393,10 +350,13 @@ nav{
   h2{
     text-align: center;
     color: white;
-    padding-left: 1em;
+
     margin-bottom: 1em;
     @media(min-width: $md-break){
       margin-bottom: 0;
+    }
+    @media(min-width: $lg-break){
+      padding-left: 1em;
     }
   }
   .portfolio-header{
@@ -492,8 +452,10 @@ nav{
         transition: .25s;
         display: inline-block;
         margin: 1px;
+        transition: .5s;
         &:hover{
           background-color: $primary-red;
+          box-shadow: 0 6px 12px rgba(0,0,0,.4);
         }
       } //end external link
       @media(min-width: $md-break){
@@ -516,7 +478,6 @@ nav{
     justify-content: center;
     align-items: center;
     width: 100%;
-
     .portfolio-primary-img{
       width:50%;
       background-color: $primary-lightgray;
@@ -550,12 +511,12 @@ nav{
     }
     @media (min-width: $sm-break){
       width: 60%;
-      padding-left:2em;
     }
   } //end portfolio imgs
   @media (min-width: $sm-break){
     padding: 100px 0;
     flex-direction: row;
+    justify-content: space-around;
     &:first-of-type{
       padding-top: 0;
     }
